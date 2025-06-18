@@ -88,6 +88,11 @@ a[href="#top"]:hover {
   display: block;
 }
 
+/*Nem volt egyértelmű, hogy arányosan osszam el a tartalmat, és használjak
+margint, hogy akkor a footer, és a tartalom közé kell-e margin, így
+kapott 2rem margin távolságot. ha nem kellet volna akkor kiveszem!
+
 .footer {
   margin-top: 2rem;
 }
+*/
