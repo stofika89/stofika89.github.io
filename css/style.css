@@ -10,6 +10,8 @@ body {
 .main {
   width: 70%;
   margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 2px solid brown;
   box-sizing: border-box;
 }
