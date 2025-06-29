@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rólunk – ExploreMore</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo animate__animated animate__fadeInDown">ExploreMore</div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav id="nav-menu">
+        <a href="index.html" class="hvr-underline-from-left">Főoldal</a>
+        <a href="destinations.html" class="hvr-underline-from-left">Úticélok</a>
+        <a href="about.html" class="hvr-underline-from-left">Rólunk</a>
+      </nav>
+    </header>
+
+    <main class="about-section">
+      <div class="about-text animate__animated animate__fadeInLeft">
+        <h1>Kik vagyunk?</h1>
+        <p>
+          Egy kalandvágyó házaspár, akik 2018 óta járják a világot, hogy
+          inspirációt adjanak másoknak is az utazáshoz.
+        </p>
+      </div>
+      <div class="about-img animate__animated animate__fadeInRight">
+        <img src="assets/about.jpg" alt="Utazók" />
+      </div>
+    </main>
+
+    <footer>&copy; 2025 ExploreMore. Minden jog fenntartva.</footer>
+
+    <script>
+      const toggleBtn = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      toggleBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
