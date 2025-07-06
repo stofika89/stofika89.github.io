@@ -1,50 +1,260 @@
 <!DOCTYPE html>
 <html lang="hu">
+  <!-- prettier-ignore-start -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ExploreMore - Főoldal</title>
+    <title>Magyar Tavak Nyaraláshoz - Balaton, Tisza-tó, Szelidi-tó</title>
+    <!-- prettier-ignore -->
+    <meta
+      name="description"
+      content="Fedezd fel Magyarország legszebb tavainak nyaralási lehetőségeit: Balaton, Tisza-tó, Szelidi-tó. Szállás, programok, jelentkezés - egy helyen!"/>
+    <!-- prettier-ignore -->
+    <meta
+      name="keywords"
+      content="Balaton, Tisza-tó, Szelidi-tó, magyar tavak, nyaralás, vízpart, szállásfoglalás, strand, üdülés, belföldi nyaralás, kemping"/>
+    <!-- prettier-ignore -->
+    <meta
+      property="og:title"
+      content="Magyar Tavak - Nyaralás Balatonon, Tisza-tónál, Szelidi-tónál"/>
+    <!-- prettier-ignore -->
+    <meta
+      property="og:description"
+      content="Belföldi nyaralás Magyarország tavai mentén? Nézd meg a Balatont, a Tisza-tavat és a Szelidi-tavat - programok, szállások és élmények egy helyen!"/>
+    <!-- prettier-ignore -->
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="Nem adok meg linket" />
+    <meta name="author" content="Takács Kristóf" />
+    <link rel="canonical" href="Nem adok meg linket" />
+    <!-- prettier-ignore -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-    />
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div class="logo animate__animated animate__fadeInDown">ExploreMore</div>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <nav id="nav-menu">
-        <a href="index.html" class="hvr-underline-from-left">Főoldal</a>
-        <a href="destinations.html" class="hvr-underline-from-left">Úticélok</a>
-        <a href="about.html" class="hvr-underline-from-left">Rólunk</a>
-      </nav>
-    </header>
+    <div class="wrapper">
+      <header>
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+          alt="Strand"
+        />
+      </header>
+      <h1>Magyar Tavak Nyaraláshoz - Válassza ki úti célját</h1>
 
-    <main class="hero">
-      <div class="hero-text animate__animated animate__zoomIn">
-        <h1>Indulj el az ismeretlenbe!</h1>
-        <p>
-          Legyen szó hegyekről, tengerpartról vagy városi kalandokról - velünk
-          felfedezheted a világot.
-        </p>
-        <a href="destinations.html" class="cta-button hvr-grow">Fedezd fel!</a>
-      </div>
-    </main>
+      <main>
+        <aside>
+          <nav>
+            <ul>
+              <li><a href="#balaton">Balaton</a></li>
+              <li><a href="#tisza">Tisza-tó</a></li>
+              <li><a href="#szelidi">Szelidi-tó</a></li>
+            </ul>
+          </nav>
 
-    <footer>&copy; 2025 Házifeladat. Minden jog fenntartva.</footer>
+          <form>
+            <p><strong>Kérem töltse ki a jelentkezési űrlapot</strong></p>
+
+            <label for="nev">Név:</label>
+            <input
+              type="text"
+              id="nev"
+              name="nev"
+              maxlength="50"
+              required
+              placeholder="Pl. Kiss Gábor"
+            />
+
+            <label for="email">E-mail cím:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              maxlength="100"
+              required
+              placeholder="pl. nev@email.com"
+            />
+
+            <label for="telefon">Telefonszám:</label>
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              maxlength="20"
+              required
+              placeholder="+36..."
+            />
+
+            <label for="to">Melyik tó érdekli?</label>
+            <select id="to" name="to">
+              <option>Balaton</option>
+              <option>Tisza-tó</option>
+              <option>Szelidi-tó</option>
+            </select>
+
+            <fieldset>
+              <legend>Milyen szállást keres?</legend>
+              <label
+                ><input type="checkbox" name="szallas" value="szalloda" />
+                Szálloda</label
+              >
+              <label
+                ><input type="checkbox" name="szallas" value="apartman" />
+                Apartmanház</label
+              >
+              <label
+                ><input type="checkbox" name="szallas" value="kemping" />
+                Kemping</label
+              >
+            </fieldset>
+
+            <fieldset>
+              <legend>Milyen ellátás legyen?</legend>
+              <label
+                ><input type="radio" name="ellatas" value="teljes" required />
+                Teljes</label
+              >
+              <label
+                ><input type="radio" name="ellatas" value="fel" />
+                Félpanzió</label
+              >
+              <label
+                ><input type="radio" name="ellatas" value="reggeli" /> Csak
+                reggeli</label
+              >
+              <label
+                ><input type="radio" name="ellatas" value="nincs" /> Nem kérek
+                ellátást</label
+              >
+            </fieldset>
+
+            <label for="uzenet">Egyéb üzenet:</label>
+            <textarea
+              id="uzenet"
+              name="uzenet"
+              maxlength="300"
+              placeholder="Ide írhatja megjegyzéseit..."
+            ></textarea>
+            <small id="uzenetSzamlalo">0 / 300 karakter</small>
+
+            <button type="submit">Mehet</button>
+          </form>
+        </aside>
+
+        <div class="content">
+          <section id="balaton" class="szekcio">
+            <h2>Balaton</h2>
+            <img src="img/balaton.jpg" alt="Balaton" class="float-img" />
+            <p>
+              A Balaton Magyarország legnagyobb tava, a magyar tengerként is
+              ismert. Híres a nyaralóhelyeiről, fürdőzési lehetőségeiről,
+              borvidékeiről (pl. Badacsony) és kulturális fesztiváljairól. A tó
+              körül kiépített kerékpárút, vitorláskikötők, szabadstrandok,
+              vízicsúszdák és élményparkok várják a látogatókat. A déli part
+              sekély, családbarát, míg az északi part mélyebb, csendesebb.
+              Gasztronómiája is figyelemre méltó: lángos, hekk és balatoni borok
+              várják az érdeklődőket.
+            </p>
+            <p>
+              A balatoni nyaralás nemcsak a strandolásról szól: a régió
+              kulturális és gasztronómiai kínálata is kiemelkedő. A tihanyi
+              apátság, a Szigligeti vár vagy a balatonfüredi Tagore sétány mind
+              kihagyhatatlan látnivalók. A környéken kiváló éttermek, borászatok
+              és családbarát programok várják az utazókat. A Balaton partja
+              ideális választás akár egy romantikus hétvégére, akár egy aktív,
+              sportos kikapcsolódásra.
+            </p>
+          </section>
+
+          <section id="tisza" class="szekcio">
+            <h2>Tisza-tó</h2>
+            <img src="img/tiszato.jpg" alt="Tisza-tó" class="float-img" />
+            <p>
+              A Tisza-tó Magyarország második legnagyobb tava, mesterségesen
+              jött létre, de mára természetközeli élővilággal és kalandokkal
+              teli régióvá vált. Horgászparadicsom, csónakos túrák és
+              madármegfigyelések teszik izgalmassá. A Poroszlói Ökocentrum
+              egyedülálló élményt nyújt családoknak. A strandok tiszták és
+              rendezettek, vízi sportokra is kiváló. Ideális célpont a
+              természetkedvelők, kerékpárosok és pihenni vágyók számára.
+            </p>
+            <p>
+              A Tisza-tó különlegessége, hogy természetközeli élményeket kínál:
+              a vízitúrák során karnyújtásnyira kerülhetsz a madárvilághoz és az
+              érintetlen ártéri erdőkhöz. A gáton végigfutó kerékpárút kiváló
+              lehetőséget ad az aktív pihenésre, a kisebb települések
+              vendégházai pedig csendes, nyugodt szállásokat kínálnak. A
+              Tisza-tó remek alternatíva azoknak, akik a tömegturizmus helyett
+              inkább egy nyugodt, elmélyült nyaralást keresnek.
+            </p>
+          </section>
+
+          <section id="szelidi" class="szekcio">
+            <h2>Szelidi-tó</h2>
+            <img src="img/szelidi to.jpg" alt="Szelidi-tó" class="float-img" />
+            <p>
+              A Szelidi-tó Bács-Kiskun megyében található, természetes eredetű,
+              sekély vizű tó. Vizének magas jód- és sótartalma jótékony hatással
+              van az egészségre. A környék ideális pihenésre, strandolásra és
+              természetjárásra. A tó partján kempingek, vendégházak,
+              szabadstrandok, vízibicikli és kajak bérlési lehetőségek
+              találhatók. Nyári fesztiváljai is vonzzák a fiatalokat és
+              családokat.
+            </p>
+            <p>
+              A Szelidi-tó régóta a környékbeli családok kedvence, és egyre több
+              utazó is felfedezi magának ezt a rejtett gyöngyszemet. A sekély
+              víz különösen ideális kisgyermekes családoknak, a tóparti
+              sétányokon pedig kényelmesen végigsétálhatunk a kempingektől
+              egészen a szabadstrandokig. A hely hangulata nyugalmat áraszt,
+              mégis pezseg a nyári élet - koncertek, kézműves vásárok és vízi
+              sportprogramok színesítik az üdülést.
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <p>© 2025 - Készítette: Takács Kristóf</p>
+      </footer>
+    </div>
 
     <script>
-      const toggleBtn = document.getElementById("menu-toggle");
-      const navMenu = document.getElementById("nav-menu");
+      const uzenet = document.getElementById("uzenet");
+      const szamlalo = document.getElementById("uzenetSzamlalo");
 
-      toggleBtn.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
+      uzenet.addEventListener("input", () => {
+        const hossz = uzenet.value.length;
+        szamlalo.textContent = `${hossz} / 300 karakter`;
       });
+
+      const szekciok = document.querySelectorAll(".szekcio");
+
+      function frissitAktivSzekcio() {
+        let aktiv = null;
+        let legkozelebb = Infinity;
+        const kozep = window.innerHeight / 2;
+
+        szekciok.forEach((szekcio) => {
+          const rect = szekcio.getBoundingClientRect();
+          const szekcioKozep = rect.top + rect.height / 2;
+          const tav = Math.abs(szekcioKozep - kozep);
+
+          if (tav < legkozelebb) {
+            legkozelebb = tav;
+            aktiv = szekcio;
+          }
+        });
+
+        szekciok.forEach((sz) => sz.classList.remove("aktiv"));
+        if (aktiv) aktiv.classList.add("aktiv");
+      }
+
+      window.addEventListener("scroll", frissitAktivSzekcio);
+      window.addEventListener("load", frissitAktivSzekcio);
     </script>
   </body>
 </html>
