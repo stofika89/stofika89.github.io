@@ -219,7 +219,7 @@
         <p>© 2025 - Készítette: Takács Kristóf</p>
       </footer>
     </div>
-
+    <!-- karakterszámláló -->
     <script>
       const uzenet = document.getElementById("uzenet");
       const szamlalo = document.getElementById("uzenetSzamlalo");
@@ -228,6 +228,10 @@
         const hossz = uzenet.value.length;
         szamlalo.textContent = `${hossz} / 300 karakter`;
       });
+    </script>
+    <script>
+      // Aktív szekciók kiemelése, azalapján,hogy melyik szekció van a képernyo kozepehez a legkozelebb
+      // A szekciók azonosítója: balaton, tisza, szelidi
 
       const szekciok = document.querySelectorAll(".szekcio");
 
