@@ -1,0 +1,38 @@
+<div class="profile-container card">
+  <h2 data-i18n="profile_title">Profilom</h2>
+
+  <!--Email -->
+  <p>
+    <strong data-i18n="email_label">Email:</strong>
+    <span id="user-email"></span>
+  </p>
+
+  <!--Email módosít -->
+  <form id="email-form">
+    <label for="new-email" data-i18n="new_email_label">Új email cím:</label>
+    <input type="email" id="new-email" required />
+    <button type="submit" data-i18n="change_email_btn">Email módosítása</button>
+    <div id="email-message" class="message"></div>
+  </form>
+
+  <!--Jelszó módosít -->
+  <form id="password-form">
+    <label for="new-password" data-i18n="new_password_label">Új jelszó:</label>
+    <input type="password" id="new-password" required minlength="6" />
+    <button type="submit" data-i18n="change_password_btn">
+      Jelszó módosítása
+    </button>
+    <div id="profile-message" class="message"></div>
+  </form>
+
+  <!--Profilkép -->
+  <div class="profile-image-section">
+    <img
+      id="profile-image"
+      src="https://via.placeholder.com/150"
+      alt="Profilkép"
+    />
+    <input type="file" id="image-upload" accept="image/*" />
+    <div id="image-message" class="message"></div>
+  </div>
+</div>

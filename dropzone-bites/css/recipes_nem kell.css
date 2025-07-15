@@ -1,0 +1,86 @@
+.recipes-page {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  backdrop-filter: blur(6px);
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.recipe-content {
+  flex: 1;
+  color: white;
+}
+
+.meta span {
+  margin-right: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.ingredients-steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.ingredients ul {
+  list-style: disc;
+  margin-left: 1rem;
+}
+
+.recipe-image img {
+  width: 280px;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.instructions ol {
+  padding-left: 1.2rem;
+}
+
+.favorite-btn {
+  margin-top: 2rem;
+  background-color: #ff6f00;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.favorite-btn:hover {
+  background-color: #e55a00;
+}
