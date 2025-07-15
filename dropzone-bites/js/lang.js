@@ -2,7 +2,7 @@ let translations = {};
 
 async function loadTranslations(lang) {
   try {
-    const res = await fetch(`../00_dropzone-bites/lang/${lang}.json`);
+    const res = await fetch(`./lang/${lang}.json`);
     translations = await res.json();
     updateTexts();
     localStorage.setItem("language", lang);
