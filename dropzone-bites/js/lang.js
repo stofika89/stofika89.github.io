@@ -21,8 +21,11 @@ function updateTexts() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("language") || "en";
-  loadTranslations(savedLang);
+  const savedLang = localStorage.getItem("language");
+  const browserLang = (navigator.language || "en").slice(0, 2);
+  const initialLang = savedLang || (browserLang === "hu" ? "hu" : "en");
+
+  loadTranslations(initialLang);
 
   document.querySelectorAll(".flag").forEach((flag) => {
     flag.addEventListener("click", () => {
