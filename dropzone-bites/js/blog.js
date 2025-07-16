@@ -5,7 +5,7 @@ const blogPosts = [
     textKey: "blog.samplepost.text",
     dateKey: "blog.samplepost.date",
     category: "stories",
-    htmlFile: "./posts/post-1.html",
+    htmlFile: "posts/post-1.html",
     summaryKey: "blog.samplepost.summary",
   },
   {
@@ -14,7 +14,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-2.html",
+    htmlFile: "posts/post-2.html",
     summaryKey: "blog.samplepost2.summary",
   },
   {
@@ -23,7 +23,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-3.html",
+    htmlFile: "posts/post-3.html",
     summaryKey: "blog.samplepost3.summary",
   },
   {
@@ -32,7 +32,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-4.html",
+    htmlFile: "posts/post-4.html",
     summaryKey: "blog.samplepost4.summary",
   },
   {
@@ -41,7 +41,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "tips",
-    htmlFile: "./posts/post-5.html",
+    htmlFile: "posts/post-5.html",
     summaryKey: "blog.samplepost5.summary",
   },
   {
@@ -50,7 +50,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "stories",
-    htmlFile: "./posts/post-6.html",
+    htmlFile: "posts/post-6.html",
     summaryKey: "blog.samplepost6.summary",
   },
   {
@@ -59,7 +59,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-7.html",
+    htmlFile: "posts/post-7.html",
     summaryKey: "blog.samplepost7.summary",
   },
   {
@@ -68,7 +68,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-8.html",
+    htmlFile: "posts/post-8.html",
     summaryKey: "blog.samplepost8.summary",
   },
   {
@@ -77,7 +77,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-9.html",
+    htmlFile: "posts/post-9.html",
     summaryKey: "blog.samplepost9.summary",
   },
   {
@@ -86,7 +86,7 @@ const blogPosts = [
     textKey: "blog.samplepost2.text",
     dateKey: "blog.samplepost2.date",
     category: "safety",
-    htmlFile: "./posts/post-10.html",
+    htmlFile: "posts/post-10.html",
     summaryKey: "blog.samplepost10.summary",
   },
 ];
