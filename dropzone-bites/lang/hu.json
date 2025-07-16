@@ -245,6 +245,22 @@
   "logbook.entries.jumpNumber": "Ugrás #",
   "logbook.entries.date": "Dátum",
 
+  "blog.title": "Blog",
+  "blog.sidebar.title": "Kategóriák",
+  "blog.sidebar.all": "Összes bejegyzés",
+  "blog.sidebar.tips": "Tippek",
+  "blog.sidebar.stories": "Történetek",
+  "blog.sidebar.safety": "Biztonság",
+
+  "blog.samplepost.title": "Első ugrás élményei",
+  "blog.samplepost.text": "Minden ejtőernyős emlékszik az első ugrására – és az ezzel járó adrenalinlöketre.",
+  "blog.samplepost.date": "2025.07.15.",
+
+  "blog.samplepost2.title": "Időjárás és biztonság",
+  "blog.samplepost2.text": "Mire érdemes figyelni ugrás előtt, és hogyan olvassuk a felhőalakzatokat.",
+  "blog.samplepost2.date": "2025.07.10.",
+  "blog.backtolist": "← Vissza az összes bejegyzéshez",
+
   "recipes-sidebar.allRecipes": "Minden Recept",
   "recipes-sidebar.favoriteRecipes": "Kedvenc Receptjeim",
   "recipes-sidebar.myRecipes": "Receptjeim",

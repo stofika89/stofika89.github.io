@@ -46,12 +46,16 @@ async function loadComponent(containerId, filePath) {
   }
 }
 
-// Hash alapján oldal kiválasztása
+// Frissített hash alapú oldalkiválasztás
 function getPageFromHash() {
   const hash = window.location.hash || "#/home";
-  const mainPart = hash.split("#/")[1] || "home";
-  const page = mainPart.split("#")[0];
-  return `./pages/${page}.html`;
+  const parts = hash.split("/");
+  const mainPage = parts[1] || "home";
+
+  // Ha blog oldal, mindig blog.html-t töltsön
+  if (mainPage === "blog") return "./pages/blog.html";
+
+  return `./pages/${mainPage}.html`;
 }
 
 // Görgetés adott ID-re
@@ -131,6 +135,19 @@ function loadDynamicScripts() {
         }
       };
     });
+  } else if (hash.startsWith("#/blog")) {
+    const existing = document.getElementById("blog-script");
+
+    if (!existing) {
+      const script = document.createElement("script");
+      script.src = "./js/blog.js";
+      script.id = "blog-script";
+      document.body.appendChild(script);
+    } else {
+      if (typeof handleBlogRouting === "function") {
+        handleBlogRouting();
+      }
+    }
   }
 }
 
@@ -196,7 +213,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // Bejlelentkezés gomb
+  // Bejelentkezés gomb
   document.addEventListener("click", async (e) => {
     if (e.target.id === "button-auth") {
       window.isLoggedIn = !window.isLoggedIn;

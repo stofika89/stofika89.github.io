@@ -241,6 +241,22 @@
   "logbook.entries.jumpNumber": "Jump #",
   "logbook.entries.date": "Date",
 
+  "blog.title": "Blog",
+  "blog.sidebar.title": "Categories",
+  "blog.sidebar.all": "All Posts",
+  "blog.sidebar.tips": "Tips",
+  "blog.sidebar.stories": "Stories",
+  "blog.sidebar.safety": "Safety",
+
+  "blog.samplepost.title": "First Jump Stories",
+  "blog.samplepost.text": "Every skydiver remembers their first jump — and the rush of adrenaline that comes with it.",
+  "blog.samplepost.date": "2025-07-15",
+
+  "blog.samplepost2.title": "Weather and Safety",
+  "blog.samplepost2.text": "What to check before jumping and how to read cloud formations.",
+  "blog.samplepost2.date": "2025-07-10",
+  "blog.backtolist": "← Back to all posts",
+
   "recipes-sidebar.allRecipes": "All Recipes",
   "recipes-sidebar.favoriteRecipes": "Favorire Recipes",
   "recipes-sidebar.myRecipes": "My Recipes",

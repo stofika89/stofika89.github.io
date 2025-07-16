@@ -238,6 +238,21 @@
   "logbook.entries.jumpNumber": "Sprung #",
   "logbook.entries.date": "Datum",
 
+  "blog.title": "Blog",
+  "blog.sidebar.title": "Kategorien",
+  "blog.sidebar.all": "Alle Beiträge",
+  "blog.sidebar.tips": "Tipps",
+  "blog.sidebar.stories": "Erlebnisse",
+  "blog.sidebar.safety": "Sicherheit",
+
+  "blog.samplepost.title": "Erste Sprungerlebnisse",
+  "blog.samplepost.text": "Jeder Fallschirmspringer erinnert sich an seinen ersten Sprung – und an den Adrenalinschub, der damit einhergeht.",
+  "blog.samplepost.date": "15.07.2025",
+
+  "blog.samplepost2.title": "Wetter und Sicherheit",
+  "blog.samplepost2.text": "Worauf man vor dem Sprung achten sollte und wie man Wolkenformationen liest.",
+  "blog.samplepost2.date": "10.07.2025",
+
   "recipes-sidebar.allRecipes": "Alle Rezepte",
   "recipes-sidebar.favoriteRecipes": "Favorisierte Rezepte",
   "recipes-sidebar.myRecipes": "Meine Rezepte",
