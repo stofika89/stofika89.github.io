@@ -114,7 +114,7 @@ function renderBlogPosts(postId = null, category = "all") {
           backLink.classList.add("blog-back");
           container.appendChild(backLink);
 
-          updateTexts(); // fontos, ha a .html fájlban is vannak data-i18n kulcsok!
+          updateTexts();
         })
         .catch((err) => {
           container.innerHTML = "<p>Post not found.</p>";
@@ -124,7 +124,6 @@ function renderBlogPosts(postId = null, category = "all") {
     return;
   }
 
-  // szűrés kategória szerint
   if (category && category !== "all") {
     postsToRender = blogPosts.filter((post) => post.category === category);
   }
@@ -152,23 +151,17 @@ function renderBlogPosts(postId = null, category = "all") {
 
 function handleBlogRouting() {
   const hash = location.hash;
-  console.log("🔍 Raw hash:", hash);
-
   if (hash.startsWith("#/blog/post/")) {
     const postId = hash.split("/")[3];
-    console.log("📄 Post megjelenítése:", postId);
     renderBlogPosts(postId);
   } else if (hash.startsWith("#/blog/")) {
     const parts = hash.replace(/^#\//, "").split("/");
     const category = parts[1] || "all";
-    console.log("📂 Kategória listázása:", category);
     renderBlogPosts(null, category);
   } else {
-    console.log("📚 Alapértelmezett lista (all)");
     renderBlogPosts();
   }
 }
 
-// Garantáljuk, hogy lefusson mindig:
 window.addEventListener("load", handleBlogRouting);
 window.addEventListener("hashchange", handleBlogRouting);
