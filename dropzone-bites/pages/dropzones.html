@@ -75,4 +75,34 @@
       </a>
     </section>
   </div>
+  <script>
+    function handleDropzoneDetail() {
+      const hash = location.hash;
+      const container = document.querySelector(".dropzones-grid");
+
+      if (!container) return;
+
+      // Ellenőrizzük, részletes DZ linkről van-e szó
+      if (hash.startsWith("#/dropzones/dz-")) {
+        const dzId = hash.split("/")[2]; // pl. "dz-kapos"
+
+        // Keressük meg a megfelelő kártyát
+        const selectedCard = Array.from(
+          document.querySelectorAll(".dropzones-card")
+        ).find((card) => card.getAttribute("href") === `#/dropzones/${dzId}`);
+
+        if (selectedCard) {
+          // Csak ezt a kártyát jelenítjük meg
+          container.innerHTML = "";
+          container.appendChild(selectedCard.cloneNode(true));
+        } else {
+          container.innerHTML = "<p>Ismeretlen dropzone.</p>";
+        }
+      }
+    }
+
+    // Hash figyelése
+    window.addEventListener("hashchange", handleDropzoneDetail);
+    window.addEventListener("load", handleDropzoneDetail);
+  </script>
 </main>

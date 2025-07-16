@@ -46,15 +46,21 @@ async function loadComponent(containerId, filePath) {
   }
 }
 
-// Frissített hash alapú oldalkiválasztás
+// Hash alapján oldal kiválasztása
 function getPageFromHash() {
   const hash = window.location.hash || "#/home";
   const parts = hash.split("/");
   const mainPage = parts[1] || "home";
 
-  // Ha blog oldal, mindig blog.html-t töltsön
+  // Blog oldal
   if (mainPage === "blog") return "./pages/blog.html";
 
+  // Dropzones aloldal (pl. dz-szeged.html)
+  if (mainPage === "dropzones" && parts[2]?.startsWith("dz-")) {
+    return `./pages/dropzones/${parts[2]}.html`;
+  }
+
+  // Egyébként a sima oldal
   return `./pages/${mainPage}.html`;
 }
 
