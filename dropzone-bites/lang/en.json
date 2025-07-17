@@ -258,6 +258,10 @@
   "blog.backtolist": "← Back to all posts",
   "blog.samplepost.summary": "A brief summary of the safety checklist.",
 
+  "popup.message.login": "Please log in to use this feature.",
+  "popup.message.dev": "This feature is currently under development.",
+  "popup.message.placeholder": "Loading message...",
+
   "recipes-sidebar.allRecipes": "All Recipes",
   "recipes-sidebar.favoriteRecipes": "Favorire Recipes",
   "recipes-sidebar.myRecipes": "My Recipes",

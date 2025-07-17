@@ -40,9 +40,14 @@ async function loadComponent(containerId, filePath) {
   try {
     const res = await fetch(filePath);
     const html = await res.text();
-    document.getElementById(containerId).innerHTML = html;
+    const container = document.getElementById(containerId);
+    if (container) {
+      container.innerHTML = html;
+    } else {
+      console.warn(` Element with id '${containerId}' not found.`);
+    }
   } catch (error) {
-    console.error(`Error loading component from ${filePath}:`, error);
+    console.error(` Error loading component from ${filePath}:`, error);
   }
 }
 
@@ -154,6 +159,16 @@ function loadDynamicScripts() {
         handleBlogRouting();
       }
     }
+  } else if (hash.startsWith("#/dropzones/dz-")) {
+    const existing = document.getElementById("popup-script");
+    if (existing) existing.remove();
+
+    requestAnimationFrame(() => {
+      const script = document.createElement("script");
+      script.src = `./js/popup.js?t=${Date.now()}`;
+      script.id = "popup-script";
+      document.body.appendChild(script);
+    });
   }
 }
 

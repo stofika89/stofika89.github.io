@@ -253,6 +253,10 @@
   "blog.samplepost2.text": "Worauf man vor dem Sprung achten sollte und wie man Wolkenformationen liest.",
   "blog.samplepost2.date": "10.07.2025",
 
+  "popup.message.login": "Bitte melde dich an, um diese Funktion zu nutzen.",
+  "popup.message.dev": "Diese Funktion befindet sich derzeit in der Entwicklung.",
+  "popup.message.placeholder": "Nachricht wird geladen...",
+
   "recipes-sidebar.allRecipes": "Alle Rezepte",
   "recipes-sidebar.favoriteRecipes": "Favorisierte Rezepte",
   "recipes-sidebar.myRecipes": "Meine Rezepte",

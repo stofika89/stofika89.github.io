@@ -261,6 +261,10 @@
   "blog.samplepost2.date": "2025.07.10.",
   "blog.backtolist": "← Vissza az összes bejegyzéshez",
 
+  "popup.message.login": "Kérlek jelentkezz be a funkció használatához.",
+  "popup.message.dev": "Ez a funkció jelenleg fejlesztés alatt áll.",
+  "popup.message.placeholder": "Üzenet betöltése...",
+
   "recipes-sidebar.allRecipes": "Minden Recept",
   "recipes-sidebar.favoriteRecipes": "Kedvenc Receptjeim",
   "recipes-sidebar.myRecipes": "Receptjeim",
