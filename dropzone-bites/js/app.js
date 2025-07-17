@@ -52,21 +52,26 @@ async function loadComponent(containerId, filePath) {
 }
 
 // Hash alapján oldal kiválasztása
-function getPageFromHash() {
+async function getPageFromHash() {
   const hash = window.location.hash || "#/home";
   const parts = hash.split("/");
   const mainPage = parts[1] || "home";
 
-  // Blog oldal
   if (mainPage === "blog") return "./pages/blog.html";
 
-  // Dropzones aloldal (pl. dz-szeged.html)
   if (mainPage === "dropzones" && parts[2]?.startsWith("dz-")) {
-    return `./pages/dropzones/${parts[2]}.html`;
+    const dzPath = `./pages/dropzones/${parts[2]}.html`;
+    const dzExists = await fetch(dzPath, { method: "HEAD" })
+      .then((r) => r.ok)
+      .catch(() => false);
+    return dzExists ? dzPath : "./pages/404.html";
   }
 
-  // Egyébként a sima oldal
-  return `./pages/${mainPage}.html`;
+  const pagePath = `./pages/${mainPage}.html`;
+  const exists = await fetch(pagePath, { method: "HEAD" })
+    .then((r) => r.ok)
+    .catch(() => false);
+  return exists ? pagePath : "./pages/404.html";
 }
 
 // Görgetés adott ID-re
@@ -174,7 +179,7 @@ function loadDynamicScripts() {
 
 // Teljes oldal újratöltése
 async function loadPageContent() {
-  const pagePath = getPageFromHash();
+  const pagePath = await getPageFromHash();
   await loadComponent("app", pagePath);
   await loadSidebarIfNeeded();
   updateTexts();

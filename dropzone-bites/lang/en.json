@@ -262,6 +262,10 @@
   "popup.message.dev": "This feature is currently under development.",
   "popup.message.placeholder": "Loading message...",
 
+  "error.404.title": "404 - Page Not Found",
+  "error.404.text": "Sorry, this page doesn't exist or has been removed.",
+  "error.404.back": "Back to homepage",
+
   "recipes-sidebar.allRecipes": "All Recipes",
   "recipes-sidebar.favoriteRecipes": "Favorire Recipes",
   "recipes-sidebar.myRecipes": "My Recipes",

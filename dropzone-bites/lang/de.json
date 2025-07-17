@@ -257,6 +257,10 @@
   "popup.message.dev": "Diese Funktion befindet sich derzeit in der Entwicklung.",
   "popup.message.placeholder": "Nachricht wird geladen...",
 
+  "error.404.title": "404 - Seite nicht gefunden",
+  "error.404.text": "Entschuldigung, diese Seite existiert nicht oder wurde entfernt.",
+  "error.404.back": "Zurück zur Startseite",
+
   "recipes-sidebar.allRecipes": "Alle Rezepte",
   "recipes-sidebar.favoriteRecipes": "Favorisierte Rezepte",
   "recipes-sidebar.myRecipes": "Meine Rezepte",

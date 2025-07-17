@@ -265,6 +265,10 @@
   "popup.message.dev": "Ez a funkció jelenleg fejlesztés alatt áll.",
   "popup.message.placeholder": "Üzenet betöltése...",
 
+  "error.404.title": "404 - Az oldal nem található",
+  "error.404.text": "Sajnáljuk, ez az oldal nem létezik vagy eltávolításra került.",
+  "error.404.back": "Vissza a főoldalra",
+
   "recipes-sidebar.allRecipes": "Minden Recept",
   "recipes-sidebar.favoriteRecipes": "Kedvenc Receptjeim",
   "recipes-sidebar.myRecipes": "Receptjeim",
