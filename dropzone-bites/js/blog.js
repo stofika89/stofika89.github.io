@@ -101,9 +101,13 @@ function renderBlogPosts(postId = null, category = "all") {
 
   if (postId) {
     const post = blogPosts.find((p) => p.id === postId);
+
     if (post && post.htmlFile) {
-      fetch(post.htmlFile)
-        .then((res) => res.text())
+      fetch(post.htmlFile, { method: "HEAD" })
+        .then((res) => {
+          if (!res.ok) throw new Error("Post HTML file not found.");
+          return fetch(post.htmlFile).then((r) => r.text());
+        })
         .then((html) => {
           container.innerHTML = html;
 
@@ -117,13 +121,17 @@ function renderBlogPosts(postId = null, category = "all") {
           updateTexts();
         })
         .catch((err) => {
-          container.innerHTML = "<p>Post not found.</p>";
-          console.error(err);
+          console.warn("Post not found:", err);
+          loadComponent("app", "./pages/404.html");
         });
+    } else {
+      loadComponent("app", "./pages/404.html");
     }
+
     return;
   }
 
+  // Ha nem egy adott cikket kértek le
   if (category && category !== "all") {
     postsToRender = blogPosts.filter((post) => post.category === category);
   }
