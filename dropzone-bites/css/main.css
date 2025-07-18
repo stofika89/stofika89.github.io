@@ -16,231 +16,6 @@ body {
   flex-direction: column;
 }
 
-/*Reszponzivitás*/
-/*WQHD (max. 2560px szélesség)*/
-@media (max-width: 2560px) {
-  body {
-    background-image: url("../img/background/bg_2560x1706.png");
-  }
-}
-/*Full HD (max. 1920px szélesség)*/
-@media (max-width: 1920px) {
-  body {
-    background-image: url("../img/background/bg_1920x1280.png");
-  }
-}
-/*Tablet (769-1151px között)*/
-@media (max-width: 1151px) and (min-width: 769px) {
-  body {
-    background-image: url("../img/background/bg_1152x768.png");
-  }
-}
-/*Mobil nézet (max. 768px)*/
-@media (max-width: 768px) {
-  body {
-    background-image: url("../img/background/bg_768x512.png");
-  }
-  .hero {
-    min-height: auto;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-  .hero .subtitle {
-    font-size: 1rem;
-    max-width: 90vw;
-    margin-top: 1rem;
-  }
-  .highlight-box {
-    width: 90vw;
-    max-width: 520px;
-    height: auto;
-    transform: none;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-  }
-  .highlight-box h2 {
-    font-size: 2rem;
-  }
-  .highlight-box h3 {
-    font-size: 1.4rem;
-  }
-  .highlight-box p {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-  .card-grid {
-    flex-direction: column;
-    align-items: center;
-    margin-top: -10vh;
-  }
-  .card-column,
-  .card-row {
-    flex-direction: column !important;
-    width: 100%;
-    align-items: center;
-  }
-  .card,
-  .card-row .card,
-  .card-column .card {
-    width: 90vw !important;
-    max-width: 520px;
-    height: 140px !important;
-  }
-  .safety .card-icon,
-  .logbook .card-icon {
-    position: absolute;
-    top: 0.5rem;
-    right: 3rem;
-  }
-  .safety .card-title,
-  .logbook .card-title {
-    position: absolute;
-    top: 3rem;
-    left: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  /*Curtain menü mobil*/
-  .hamburger {
-    display: block;
-  }
-  .nav-main,
-  .navbar-controls .language-switcher,
-  .profile-icon {
-    display: none;
-  }
-  .desktop-only {
-    display: none;
-  }
-  .mobile-only {
-    display: flex;
-  }
-  .nav-links {
-    display: none !important;
-  }
-  .language-switcher {
-    display: none !important;
-  }
-}
-/*Asztali nézet (min. 769px)*/
-@media (min-width: 769px) {
-  .nav-main {
-    display: flex !important;
-  }
-  .navbar-controls {
-    display: flex !important;
-    align-items: center;
-    gap: 1rem;
-  }
-  .language-switcher {
-    display: flex !important;
-  }
-  .language-mobile,
-  .hamburger,
-  .curtain-menu {
-    display: none !important;
-  }
-  .mobile-only {
-    display: none !important;
-  }
-  .desktop-only {
-    display: block !important;
-  }
-}
-/* === Reszponzív logbook oldal === */
-@media (max-width: 768px) {
-  .logbook-page {
-    flex-direction: column;
-  }
-  .logbook-page .sidebar {
-    width: 100%;
-    margin-bottom: 1rem;
-    flex: none;
-  }
-  .logbook-content {
-    max-width: 100%;
-    margin: 0;
-    padding: 15px;
-  }
-}
-@media (max-width: 768px) {
-  .recipes-page {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-  .sidebar {
-    width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .recipes-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .recipe-card {
-    width: 100%;
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-  .recipe-card img {
-    height: 180px;
-  }
-  .meta span {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .ingredients-steps {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .recipe-image img {
-    width: 100%;
-    height: auto;
-  }
-  .favorite-btn {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-  }
-  .recipe-wrapper {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-  }
-}
-@media (max-width: 1024px) {
-  .safety-page {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .safety-sidebar {
-    width: 100%;
-    position: static;
-  }
-  .safety-content {
-    padding: 1.5rem;
-  }
-}
-@media (max-width: 768px) {
-  .sidebar,
-  .logbook-page .sidebar {
-    width: 100%;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    flex: none;
-  }
-  .safety-sidebar {
-    width: 100%;
-    position: static;
-  }
-}
 .navbar {
   display: flex;
   align-items: center;
@@ -669,7 +444,7 @@ a:hover {
 /* === Landing page stílus vége === */
 /* === Sidebar stílusok === */
 .sidebar,
-.dropzone-sidebar,
+.dropzones-sidebar,
 .logbook-page .sidebar,
 .safety-sidebar {
   width: 220px;
@@ -681,33 +456,33 @@ a:hover {
           backdrop-filter: blur(6px);
 }
 .sidebar h2,
-.dropzone-sidebar h2,
+.dropzones-sidebar h2,
 .logbook-page .sidebar h2,
 .safety-sidebar h2 {
   margin-bottom: 1rem;
   font-size: 1.4rem;
 }
 .safety-sidebar .sidebar h2,
-.safety-sidebar .dropzone-sidebar h2,
+.safety-sidebar .dropzones-sidebar h2,
 .safety-sidebar .logbook-page .sidebar h2,
 .safety-sidebar .safety-sidebar h2 {
   color: #f7e488;
 }
 .sidebar ul,
-.dropzone-sidebar ul,
+.dropzones-sidebar ul,
 .logbook-page .sidebar ul,
 .safety-sidebar ul {
   list-style: none;
   padding: 0;
 }
 .sidebar ul li,
-.dropzone-sidebar ul li,
+.dropzones-sidebar ul li,
 .logbook-page .sidebar ul li,
 .safety-sidebar ul li {
   margin-bottom: 1rem;
 }
 .sidebar ul li a,
-.dropzone-sidebar ul li a,
+.dropzones-sidebar ul li a,
 .logbook-page .sidebar ul li a,
 .safety-sidebar ul li a {
   color: white;
@@ -716,14 +491,14 @@ a:hover {
   transition: color 0.2s ease;
 }
 .sidebar ul li a:hover,
-.dropzone-sidebar ul li a:hover,
+.dropzones-sidebar ul li a:hover,
 .logbook-page .sidebar ul li a:hover,
 .safety-sidebar ul li a:hover {
   text-decoration: underline;
   color: #ffcc00;
 }
 .sidebar.safety-sidebar,
-.dropzone-sidebar.safety-sidebar,
+.dropzones-sidebar.safety-sidebar,
 .logbook-page .sidebar.safety-sidebar,
 .safety-sidebar.safety-sidebar {
   background-color: rgba(0, 0, 0, 0.5);
@@ -1487,4 +1262,230 @@ a:hover {
 
 .hidden {
   display: none;
+}
+
+/*Reszponzivitás*/
+/*WQHD (max. 2560px szélesség)*/
+@media (max-width: 2560px) {
+  body {
+    background-image: url("../img/background/bg_2560x1706.png");
+  }
+}
+/*Full HD (max. 1920px szélesség)*/
+@media (max-width: 1920px) {
+  body {
+    background-image: url("../img/background/bg_1920x1280.png");
+  }
+}
+/*Tablet (769-1151px között)*/
+@media (max-width: 1151px) and (min-width: 769px) {
+  body {
+    background-image: url("../img/background/bg_1152x768.png");
+  }
+}
+/*Mobil nézet (max. 768px)*/
+@media (max-width: 768px) {
+  body {
+    background-image: url("../img/background/bg_768x512.png");
+  }
+  .hero {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    max-width: 90vw;
+    margin-top: 1rem;
+  }
+  .highlight-box {
+    width: 90vw;
+    max-width: 520px;
+    height: auto;
+    transform: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  .highlight-box h2 {
+    font-size: 2rem;
+  }
+  .highlight-box h3 {
+    font-size: 1.4rem;
+  }
+  .highlight-box p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10vh;
+  }
+  .card-column,
+  .card-row {
+    flex-direction: column !important;
+    width: 100%;
+    align-items: center;
+  }
+  .card,
+  .card-row .card,
+  .card-column .card {
+    width: 90vw !important;
+    max-width: 520px;
+    height: 140px !important;
+  }
+  .safety .card-icon,
+  .logbook .card-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 3rem;
+  }
+  .safety .card-title,
+  .logbook .card-title {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  /*Curtain menü mobil*/
+  .hamburger {
+    display: block;
+  }
+  .nav-main,
+  .navbar-controls .language-switcher,
+  .profile-icon {
+    display: none;
+  }
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: flex;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .language-switcher {
+    display: none !important;
+  }
+}
+/*Asztali nézet (min. 769px)*/
+@media (min-width: 769px) {
+  .nav-main {
+    display: flex !important;
+  }
+  .navbar-controls {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+  }
+  .language-switcher {
+    display: flex !important;
+  }
+  .language-mobile,
+  .hamburger,
+  .curtain-menu {
+    display: none !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+  .desktop-only {
+    display: block !important;
+  }
+}
+/* === Reszponzív logbook oldal === */
+@media (max-width: 768px) {
+  .logbook-page {
+    flex-direction: column;
+  }
+  .logbook-page .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: none;
+  }
+  .logbook-content {
+    max-width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .recipes-page {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .sidebar {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .recipe-card {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .recipe-card img {
+    height: 180px;
+  }
+  .meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .ingredients-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .recipe-image img {
+    width: 100%;
+    height: auto;
+  }
+  .favorite-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  .recipe-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  .safety-page {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .safety-sidebar {
+    width: 100%;
+    position: static;
+  }
+  .safety-content {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar,
+  .logbook-page .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    flex: none;
+  }
+  .safety-sidebar {
+    width: 100%;
+    position: static;
+  }
 }/*# sourceMappingURL=main.css.map */
