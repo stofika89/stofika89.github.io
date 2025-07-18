@@ -16,6 +16,10 @@ body {
   flex-direction: column;
 }
 
+body {
+  background: red;
+}
+
 /*Reszponzivitás*/
 /*WQHD (max. 2560px szélesség)*/
 @media (max-width: 2560px) {
