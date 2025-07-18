@@ -93,7 +93,17 @@ const blogPosts = [
 
 function renderBlogPosts(postId = null, category = "all") {
   const container = document.getElementById("blog-content");
-  if (!container || !window.translations) return;
+
+  if (!container || !window.translations) {
+    container.innerHTML = `
+      <div class="blog-placeholder">
+        <h2>Welcome to the Blog!</h2>
+        <p>Here you'll find stories, safety tips, and skydiving-related insights. ✈️</p>
+        <p>If you'd like to suggest a topic, feel free to reach out via the <a href="#/contact">Contact</a> page.</p>
+      </div>
+    `;
+    return;
+  }
 
   container.innerHTML = "";
 
