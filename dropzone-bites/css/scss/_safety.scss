@@ -1,0 +1,58 @@
+/* === Safety oldal stílusa === */
+
+.safety-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.safety-content {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f7e488;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #f7e488;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: #ed3b32;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  li {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-top: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2rem 0;
+  }
+}

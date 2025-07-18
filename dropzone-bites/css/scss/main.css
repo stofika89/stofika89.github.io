@@ -1,13 +1,10 @@
-/*A kommentek azért kellenek, mert el fogok veszni a CSS-ben, már előre érzem.*/
-
-/*Reset, minden böngészőn alapbeállítás*/
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*Alap: Nagy felbontáú háttér*/
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-image: url("../img/background/bg_3840x2560.png");
@@ -20,7 +17,6 @@ body {
 }
 
 /*Reszponzivitás*/
-
 /*WQHD (max. 2560px szélesség)*/
 @media (max-width: 2560px) {
   body {
@@ -33,37 +29,31 @@ body {
     background-image: url("../img/background/bg_1920x1280.png");
   }
 }
-
 /*Tablet (769-1151px között)*/
 @media (max-width: 1151px) and (min-width: 769px) {
   body {
     background-image: url("../img/background/bg_1152x768.png");
   }
 }
-
 /*Mobil nézet (max. 768px)*/
 @media (max-width: 768px) {
   body {
     background-image: url("../img/background/bg_768x512.png");
   }
-
   .hero {
     min-height: auto;
     padding-top: 2rem;
     padding-bottom: 1rem;
   }
-
   .hero h1 {
     font-size: 2.5rem;
     line-height: 1.2;
   }
-
   .hero .subtitle {
     font-size: 1rem;
     max-width: 90vw;
     margin-top: 1rem;
   }
-
   .highlight-box {
     width: 90vw;
     max-width: 520px;
@@ -73,33 +63,27 @@ body {
     margin-bottom: 2rem;
     padding: 1.5rem;
   }
-
   .highlight-box h2 {
     font-size: 2rem;
   }
-
   .highlight-box h3 {
     font-size: 1.4rem;
   }
-
   .highlight-box p {
     font-size: 1rem;
     max-width: 90%;
   }
-
   .card-grid {
     flex-direction: column;
     align-items: center;
     margin-top: -10vh;
   }
-
   .card-column,
   .card-row {
     flex-direction: column !important;
     width: 100%;
     align-items: center;
   }
-
   .card,
   .card-row .card,
   .card-column .card {
@@ -107,14 +91,12 @@ body {
     max-width: 520px;
     height: 140px !important;
   }
-
   .safety .card-icon,
   .logbook .card-icon {
     position: absolute;
     top: 0.5rem;
     right: 3rem;
   }
-
   .safety .card-title,
   .logbook .card-title {
     position: absolute;
@@ -124,75 +106,149 @@ body {
     font-weight: 700;
     white-space: nowrap;
   }
-
   /*Curtain menü mobil*/
   .hamburger {
     display: block;
   }
-
   .nav-main,
   .navbar-controls .language-switcher,
   .profile-icon {
     display: none;
   }
-
   .desktop-only {
     display: none;
   }
-
   .mobile-only {
     display: flex;
   }
-
   .nav-links {
     display: none !important;
   }
-
   .language-switcher {
     display: none !important;
   }
 }
-
 /*Asztali nézet (min. 769px)*/
 @media (min-width: 769px) {
   .nav-main {
     display: flex !important;
   }
-
   .navbar-controls {
     display: flex !important;
     align-items: center;
     gap: 1rem;
   }
-
   .language-switcher {
     display: flex !important;
   }
-
   .language-mobile,
   .hamburger,
   .curtain-menu {
     display: none !important;
   }
-
   .mobile-only {
     display: none !important;
   }
-
   .desktop-only {
     display: block !important;
   }
 }
-
-/* === Navigáció stílusai === */
-
+/* === Reszponzív logbook oldal === */
+@media (max-width: 768px) {
+  .logbook-page {
+    flex-direction: column;
+  }
+  .logbook-page .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: none;
+  }
+  .logbook-content {
+    max-width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .recipes-page {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .sidebar {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .recipe-card {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .recipe-card img {
+    height: 180px;
+  }
+  .meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .ingredients-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .recipe-image img {
+    width: 100%;
+    height: auto;
+  }
+  .favorite-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  .recipe-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  .safety-page {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .safety-sidebar {
+    width: 100%;
+    position: static;
+  }
+  .safety-content {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar,
+  .logbook-page .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    flex: none;
+  }
+  .safety-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgba(15, 15, 15, 0.6);
   padding: 1rem 2rem;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -242,7 +298,6 @@ body {
 }
 
 /*Nyelvváltó*/
-
 .language-switcher {
   display: flex;
   align-items: center;
@@ -253,7 +308,8 @@ body {
 .flag {
   width: 24px;
   height: 24px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -266,7 +322,6 @@ body {
 }
 
 /*Profil ikon*/
-
 .profile-icon {
   width: 32px;
   height: 32px;
@@ -275,7 +330,6 @@ body {
 }
 
 /*Curtain menü*/
-
 /* Hamburger ikon*/
 .hamburger {
   display: none;
@@ -292,7 +346,8 @@ body {
   height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   z-index: 999;
   display: none;
   flex-direction: column;
@@ -374,11 +429,7 @@ body {
     justify-content: flex-end;
   }
 }
-
-/* === Navigáció stílus vége === */
-
 /* === Landing page stílusa === */
-
 /*Központi tartalom*/
 main#app {
   flex: 1;
@@ -405,6 +456,7 @@ main#app {
   padding-top: 1vh;
   padding-bottom: 5vh;
 }
+
 .welcome h1 {
   font-size: 4rem;
   font-weight: 800;
@@ -433,7 +485,6 @@ main#app {
 }
 
 /*Alap szövegbeállítás*/
-
 h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -454,7 +505,6 @@ a:hover {
 }
 
 /*Sárga highlight doboz*/
-
 /*Alapbeállítások*/
 .highlight-box {
   display: flex;
@@ -594,6 +644,7 @@ a:hover {
   font-size: 2rem;
   font-weight: 700;
 }
+
 .quickrecipes .card-icon {
   top: 0.5rem;
   right: 3rem;
@@ -616,52 +667,114 @@ a:hover {
 }
 
 /* === Landing page stílus vége === */
+/* === Sidebar stílusok === */
+.sidebar,
+.dropzone-sidebar,
+.logbook-page .sidebar,
+.safety-sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+.sidebar h2,
+.dropzone-sidebar h2,
+.logbook-page .sidebar h2,
+.safety-sidebar h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.safety-sidebar .sidebar h2,
+.safety-sidebar .dropzone-sidebar h2,
+.safety-sidebar .logbook-page .sidebar h2,
+.safety-sidebar .safety-sidebar h2 {
+  color: #f7e488;
+}
+.sidebar ul,
+.dropzone-sidebar ul,
+.logbook-page .sidebar ul,
+.safety-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li,
+.dropzone-sidebar ul li,
+.logbook-page .sidebar ul li,
+.safety-sidebar ul li {
+  margin-bottom: 1rem;
+}
+.sidebar ul li a,
+.dropzone-sidebar ul li a,
+.logbook-page .sidebar ul li a,
+.safety-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.sidebar ul li a:hover,
+.dropzone-sidebar ul li a:hover,
+.logbook-page .sidebar ul li a:hover,
+.safety-sidebar ul li a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+.sidebar.safety-sidebar,
+.dropzone-sidebar.safety-sidebar,
+.logbook-page .sidebar.safety-sidebar,
+.safety-sidebar.safety-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1.5rem;
+  position: sticky;
+  top: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 
-/* === Footer stílus beállításai, és a hozzá tartozó oldalak === */
+/* === Footer stílusok és kapcsolódó oldalak === */
 .footer {
   background-color: rgba(15, 15, 15, 0.6);
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   color: #ccc;
 }
-
-.footer-content {
+.footer .footer-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
 }
-
-.footer-content a {
+.footer .footer-content a {
   color: #ffcc00;
   margin: 0 0.25rem;
   text-decoration: none;
 }
-
-.footer-content a:hover {
+.footer .footer-content a:hover {
   text-decoration: underline;
 }
-
-/*Social Media ikonok*/
-.social-icons {
+.footer .social-icons {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
-
-.social-icons img {
+.footer .social-icons img {
   width: 30px;
   height: 30px;
   filter: brightness(0) invert(1);
   transition: transform 0.2s ease;
 }
-.social-icons img:hover {
+.footer .social-icons img:hover {
   transform: scale(1.2);
   filter: brightness(1.2) invert(0);
 }
-/* Terms of Service / Privacy Policy stílusok  */
+
+/* === Terms of Service / Privacy Policy === */
 .terms-wrapper {
   max-width: 900px;
   margin: 40px auto;
@@ -671,32 +784,27 @@ a:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   color: #fff;
 }
-
 .terms-wrapper h1 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 2.5rem;
   font-weight: bold;
 }
-
 .terms-wrapper h2 {
   margin-top: 30px;
   font-size: 1.4rem;
   color: #f7e488;
 }
-
 .terms-wrapper p {
   line-height: 1.6;
   margin-bottom: 15px;
 }
-
 .terms-wrapper a {
   color: #f7e488;
   text-decoration: underline;
 }
 
-/* Contact form stílus */
-
+/* === Kapcsolat oldal === */
 .contact-wrapper {
   max-width: 700px;
   margin: 40px auto;
@@ -706,31 +814,26 @@ a:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   color: #fff;
 }
-
 .contact-wrapper h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 2.2rem;
 }
-
 .contact-wrapper p {
   margin-bottom: 20px;
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
-.contact-form {
+.contact-wrapper .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
-.contact-form label {
+.contact-wrapper .contact-form label {
   font-weight: bold;
 }
-
-.contact-form input,
-.contact-form textarea {
+.contact-wrapper .contact-form input,
+.contact-wrapper .contact-form textarea {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -738,21 +841,17 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.08);
   color: #fff;
 }
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
+.contact-wrapper .contact-form input:focus,
+.contact-wrapper .contact-form textarea:focus {
   outline: none;
   border-color: #d7b520;
   background-color: rgba(255, 255, 255, 0.15);
 }
-
-.contact-form textarea {
+.contact-wrapper .contact-form textarea {
   min-height: 100px;
   resize: none;
 }
-
-.contact-form button {
+.contact-wrapper .contact-form button {
   background-color: #d7b520;
   color: #000;
   font-weight: bold;
@@ -762,15 +861,13 @@ a:hover {
   cursor: not-allowed;
   opacity: 0.6;
 }
-
-.contact-form .info-text {
+.contact-wrapper .contact-form .info-text {
   font-size: 0.9em;
   color: #ccc;
   text-align: center;
 }
 
-/*About page */
-
+/* === Rólunk oldal === */
 .about-wrapper {
   max-width: 800px;
   margin: 40px auto;
@@ -780,59 +877,22 @@ a:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   color: #fff;
 }
-
 .about-wrapper h1 {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 20px;
 }
-
 .about-wrapper p {
   line-height: 1.6;
   margin-bottom: 15px;
   font-size: 1.05rem;
 }
 
-/* === Footer stílus vége === */
-
-/* ==== Recept oldalak stílusai ==== */
+/* === Recipes oldal stílusai === */
 .recipes-page {
   display: flex;
   padding: 2rem;
   gap: 2rem;
-}
-
-.sidebar {
-  width: 220px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  color: white;
-  backdrop-filter: blur(6px);
-}
-
-.sidebar h2 {
-  margin-bottom: 1rem;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
-  color: #ffcc00;
 }
 
 .recipes-grid {
@@ -843,97 +903,40 @@ a:hover {
 }
 
 .recipe-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 1rem;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
-}
-
-.recipe-card:hover {
-  transform: translateY(-5px);
-}
-
-.recipe-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1rem;
-}
-
-.recipe-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.recipe-card p {
-  font-size: 0.95rem;
-  opacity: 0.8;
-}
-.recipe-card {
   display: block;
   padding: 1rem;
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   text-decoration: none;
   color: white;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease;
 }
-
 .recipe-card:hover {
   transform: scale(1.03);
   color: #ffcc00;
 }
-
-/* ==== Recept oldal stílus vége ==== */
-
-/* ==== Részletes recept oldal stílus ==== */
-
-.recipes-page {
-  display: flex;
-  padding: 2rem;
-  gap: 2rem;
-}
-
-.sidebar {
-  width: 220px;
-  background: rgba(0, 0, 0, 0.4);
+.recipe-card img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1rem;
-  padding: 1.5rem;
-  color: white;
-  backdrop-filter: blur(6px);
-}
-
-.sidebar h2 {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   margin-bottom: 1rem;
 }
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
+.recipe-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.recipe-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
 }
 
-.sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
-}
-
+/* === Részletes receptoldal stílusai === */
 .recipe-content {
   flex: 1;
   color: white;
@@ -963,12 +966,11 @@ a:hover {
   border-radius: 1rem;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   margin: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .recipe-image img:hover {
   transform: scale(1.25);
   box-shadow: 0 0 15px rgba(236, 217, 217, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .instructions ol {
@@ -988,7 +990,6 @@ a:hover {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .favorite-btn:hover {
   background-color: #e55a00;
 }
@@ -1001,76 +1002,21 @@ a:hover {
   border-radius: 1rem;
 }
 
-/* Recept oldal reszponzív beállítása*/
-@media (max-width: 768px) {
-  .recipes-page {
-    flex-direction: column;
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .sidebar {
-    width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .recipes-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .recipe-card {
-    width: 100%;
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .recipe-card img {
-    height: 180px;
-  }
-
-  .meta span {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .ingredients-steps {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .recipe-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .favorite-btn {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-  }
-
-  .recipe-wrapper {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-  }
-}
-
-/* ==== Részletes recept oldal stílus vége ==== */
-
-/* ==== Dropzone oldal stílusa ==== */
-
+/* === Dropzones oldal === */
 .dropzones-container {
   flex: 1;
   display: flex;
   justify-content: center;
 }
-
 .dropzones-container a:hover {
   text-decoration: underline;
   color: #ffcc00;
+}
+
+.dropzones-page {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
 }
 
 .dropzones-grid {
@@ -1080,51 +1026,6 @@ a:hover {
   max-width: 800px;
   width: 100%;
   padding: 0 1rem;
-}
-
-.dropzones-page {
-  display: flex;
-  padding: 2rem;
-  gap: 2rem;
-}
-
-.dropzones-sidebar {
-  width: 220px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  color: white;
-  backdrop-filter: blur(6px);
-}
-
-.dropzones-sidebar h2 {
-  margin-bottom: 1rem;
-}
-
-.dropzones-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.dropzones-sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.dropzones-sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.dropzones-sidebar ul li a:hover {
-  text-decoration: underline;
-  color: #ffcc00;
-}
-
-.dropzones-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
   flex: 1;
 }
 
@@ -1134,7 +1035,8 @@ a:hover {
   padding: 1rem;
   text-align: center;
   color: white;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s;
   min-height: 420px;
@@ -1142,71 +1044,32 @@ a:hover {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .dropzones-card:hover {
   transform: scale(1.03);
 }
-
 .dropzones-card img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1rem;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
-
 .dropzones-card h3 {
   margin-top: 0.1rem;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
-
 .dropzones-card p {
   font-size: 0.95rem;
   opacity: 0.9;
 }
 
-/*Reszponzív stílus még hiányzik*/
-
-/* ==== Dropzone oldal stílus vége ==== */
-
-/* ==== Részletes dropzone oldal stílus ==== */
+/* === Részletes dropzone oldal === */
 .dropzone-page {
   display: flex;
   padding: 2rem;
   gap: 2rem;
-}
-
-.dropzone-sidebar {
-  width: 220px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  color: white;
-  backdrop-filter: blur(6px);
-}
-
-.dropzone-sidebar h2 {
-  margin-bottom: 1rem;
-}
-
-.dropzone-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.dropzone-sidebar ul li {
-  margin-bottom: 1rem;
-}
-
-.dropzone-sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.dropzone-sidebar ul li a:hover {
-  text-decoration: underline;
 }
 
 .dropzone-content {
@@ -1219,6 +1082,12 @@ a:hover {
   margin-right: 1.5rem;
   font-size: 0.95rem;
   opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.dropzone-meta i {
+  color: #ffcc00;
 }
 
 .dropzone-steps {
@@ -1239,18 +1108,16 @@ a:hover {
   border-radius: 1rem;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
   margin: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .dropzone-image img:hover {
   transform: scale(1);
   box-shadow: 0 0 15px rgba(236, 217, 217, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dropzone-desc {
   margin-top: -3rem;
 }
-
 .dropzone-desc ol {
   padding-left: 1.2rem;
   margin: 0.5rem;
@@ -1268,7 +1135,6 @@ a:hover {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .dropzone-favorite-btn:hover {
   background-color: #e55a00;
 }
@@ -1281,23 +1147,7 @@ a:hover {
   padding: 1.5rem;
 }
 
-.dropzone-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: 1.5rem;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-.dropzone-meta i {
-  color: #ffcc00;
-}
-
-/* ==== Részletes dropzone oldal stílus vége ==== */
-
 /* === Safety oldal stílusa === */
-
 .safety-page {
   display: flex;
   gap: 2rem;
@@ -1305,120 +1155,57 @@ a:hover {
   color: #ffffff;
 }
 
-/* Oldalsó navigáció */
-.safety-sidebar {
-  width: 260px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
-  border-radius: 1.5rem;
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 2rem;
-  height: fit-content;
-}
-
-.safety-sidebar h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #f7e488;
-}
-
-.safety-sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.safety-sidebar li {
-  margin-bottom: 0.8rem;
-}
-
-.safety-sidebar a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.safety-sidebar a:hover {
-  color: #ffcc00;
-}
-
-/* Tartalmi rész */
 .safety-content {
   flex: 1;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 2rem;
   border-radius: 1.5rem;
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-
 .safety-content h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #f7e488;
 }
-
 .safety-content h2 {
   font-size: 1.5rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #f7e488;
 }
-
 .safety-content h3 {
   font-size: 1.2rem;
   margin-top: 1.5rem;
   color: #ed3b32;
 }
-
 .safety-content ul {
   margin-left: 1.5rem;
   margin-bottom: 1.5rem;
 }
-
 .safety-content li {
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
-
 .safety-content p {
   margin-top: 1rem;
   line-height: 1.6;
   max-width: 800px;
 }
-
 .safety-content hr {
   border: none;
   border-top: 1px solid #ccc;
   margin: 2rem 0;
 }
 
-@media (max-width: 1024px) {
-  .safety-page {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .safety-sidebar {
-    width: 100%;
-    position: static;
-  }
-
-  .safety-content {
-    padding: 1.5rem;
-  }
-}
-/* === Safety oldal vége === */
-
-/* === Login oldalak stílusai === */
+/* === Login / Auth oldalak stílusai === */
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
 }
-
 .auth-container img {
   width: 100%;
   max-width: 400px;
@@ -1433,23 +1220,16 @@ a:hover {
   max-width: 400px;
   width: 100%;
 }
-
-.auth-card h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
+.auth-card h1,
 .auth-card h2 {
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
 .auth-card label {
   display: block;
   margin-bottom: 0.3rem;
   font-weight: bold;
 }
-
 .auth-card input {
   width: 100%;
   padding: 0.5rem;
@@ -1457,7 +1237,6 @@ a:hover {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
-
 .auth-card button {
   width: 100%;
   padding: 0.7rem;
@@ -1468,7 +1247,6 @@ a:hover {
   border-radius: 6px;
   cursor: pointer;
 }
-
 .auth-card button:hover {
   background-color: #1a2e66;
 }
@@ -1478,10 +1256,7 @@ a:hover {
   margin-top: 1rem;
 }
 
-/* === Login oldalak stílusainak a vége === */
-
-/* ==== Logbook oldal stílusa ==== */
-
+/* === Logbook oldal stílusai === */
 .logbook-page {
   display: flex;
   gap: 2rem;
@@ -1491,14 +1266,14 @@ a:hover {
   min-height: 100vh;
   box-sizing: border-box;
 }
-
 .logbook-page .sidebar {
   flex: 0 0 220px;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 1rem;
   padding: 1.5rem;
   color: white;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   box-sizing: border-box;
 }
 
@@ -1519,17 +1294,15 @@ a:hover {
   flex-direction: column;
   gap: 1.25rem;
 }
-
 #logbook-form label {
   font-weight: 600;
   margin-bottom: 0.1rem;
   display: block;
   color: #f0e68c;
 }
-
-#logbook-form input[type="text"],
-#logbook-form input[type="date"],
-#logbook-form input[type="number"],
+#logbook-form input[type=text],
+#logbook-form input[type=date],
+#logbook-form input[type=number],
 #logbook-form textarea {
   width: 800px;
   padding: 0.6rem 0.8rem;
@@ -1542,21 +1315,18 @@ a:hover {
   box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
-
-#logbook-form input[type="text"]:focus,
-#logbook-form input[type="date"]:focus,
-#logbook-form input[type="number"]:focus,
+#logbook-form input[type=text]:focus,
+#logbook-form input[type=date]:focus,
+#logbook-form input[type=number]:focus,
 #logbook-form textarea:focus {
   outline: none;
   border-color: #d7b520;
   background-color: rgba(255, 255, 255, 0.15);
 }
-
 #logbook-form textarea {
   min-height: 100px;
   resize: none;
 }
-
 #logbook-form button {
   background-color: #d7b520;
   color: #000;
@@ -1568,7 +1338,9 @@ a:hover {
   opacity: 0.6;
   align-self: flex-start;
 }
-
+#logbook-form button:hover {
+  background-color: #b5a010;
+}
 #logbook-form p {
   color: #e6e5e1;
   margin-top: 0.5rem;
@@ -1578,33 +1350,17 @@ a:hover {
   line-height: 1.6;
 }
 
-#logbook-form button:hover {
-  background-color: #b5a010;
-}
-
-@media (max-width: 768px) {
-  .logbook-page {
-    flex-direction: column;
-  }
-  .logbook-page .sidebar {
-    width: 100%;
-    margin-bottom: 1rem;
-    flex: none;
-  }
-  .logbook-content {
-    max-width: 100%;
-    margin: 0;
-    padding: 15px;
-  }
-}
-
-/* ==== Logbook Entries oldal ==== */
-
+/* === Logbook Entries oldal === */
 .entries-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
   padding: 4rem;
+}
+@media (max-width: 768px) {
+  .entries-wrapper {
+    padding: 1rem;
+  }
 }
 
 .entry-card {
@@ -1612,16 +1368,20 @@ a:hover {
   border-radius: 1rem;
   padding: 2rem;
   color: white;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
 }
-
 .entry-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
 }
-
+@media (max-width: 768px) {
+  .entry-card {
+    padding: 1rem;
+  }
+}
 .entry-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
@@ -1633,10 +1393,15 @@ a:hover {
   margin-bottom: 0.75rem;
   opacity: 0.85;
 }
-
 .entry-meta span {
   display: inline-block;
   margin-right: 1.5rem;
+}
+@media (max-width: 768px) {
+  .entry-meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .entry-notes {
@@ -1645,24 +1410,7 @@ a:hover {
   opacity: 0.95;
 }
 
-/* Mobil */
-@media (max-width: 768px) {
-  .entries-wrapper {
-    padding: 1rem;
-  }
-
-  .entry-card {
-    padding: 1rem;
-  }
-
-  .entry-meta span {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-}
-
-/* Blog oldalak stílusa */
-
+/* === Blog oldal stílusai === */
 .blog-page {
   display: flex;
   flex-direction: row;
@@ -1683,31 +1431,26 @@ a:hover {
   background: rgba(0, 0, 0, 0.4);
   padding: 1.5rem;
   border-radius: 1rem;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
 .blog-post h3 {
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
 }
-
 .blog-post p {
   line-height: 1.6;
   font-size: 1rem;
   opacity: 0.95;
 }
-
 .blog-post .meta {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   opacity: 0.7;
 }
 
-/*Blog oldal stílus vége*/
-
-/*  Popup stílus  */
-
+/* === Popup stílus === */
 .popup {
   position: fixed;
   top: 0;
@@ -1726,7 +1469,8 @@ a:hover {
   color: white;
   padding: 2rem;
   border-radius: 1rem;
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   max-width: 400px;
   width: 90%;
   text-align: center;
@@ -1743,6 +1487,4 @@ a:hover {
 
 .hidden {
   display: none;
-}
-
-/* Popup stílus vége*/
+}/*# sourceMappingURL=main.css.map */

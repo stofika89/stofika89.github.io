@@ -1,0 +1,158 @@
+/* === Logbook oldal stílusai === */
+
+.logbook-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  .sidebar {
+    flex: 0 0 220px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: white;
+    backdrop-filter: blur(6px);
+    box-sizing: border-box;
+  }
+}
+
+.logbook-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    display: block;
+    color: #f0e68c;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  textarea {
+    width: 800px;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #d7b520;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: none;
+  }
+
+  button {
+    background-color: #d7b520;
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: not-allowed;
+    opacity: 0.6;
+    align-self: flex-start;
+
+    &:hover {
+      background-color: #b5a010;
+    }
+  }
+
+  p {
+    color: #e6e5e1;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+}
+
+/* === Logbook Entries oldal === */
+
+.entries-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 4rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.entry-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #f7e488;
+  }
+}
+
+.entry-meta {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+
+  span {
+    display: inline-block;
+    margin-right: 1.5rem;
+
+    @media (max-width: 768px) {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.entry-notes {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
