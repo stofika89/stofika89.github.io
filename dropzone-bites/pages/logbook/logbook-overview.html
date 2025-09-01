@@ -1,0 +1,82 @@
+<section id="logbook-overview">
+  <h1 id="overview-top" data-i18n="logbook.overview.heading">
+    Logbook Overview
+  </h1>
+  <p class="muted" data-i18n="logbook.overview.subheading">
+    Demo data — will be replaced with live data.
+  </p>
+
+  <section class="lb-stats">
+    <div class="stat">
+      <span class="label" data-i18n="logbook.stats.totalJumps"
+        >Total Jumps</span
+      >
+      <span class="value" id="stat-totalJumps">—</span>
+    </div>
+    <div class="stat">
+      <span class="label" data-i18n="logbook.stats.totalFreefall"
+        >Total Freefall</span
+      >
+      <span class="value" id="stat-totalFF">—</span>
+    </div>
+    <div class="stat">
+      <span class="label" data-i18n="logbook.stats.lastJump">Last Jump</span>
+      <span class="value" id="stat-lastJump">—</span>
+    </div>
+    <div class="stat">
+      <span class="label" data-i18n="logbook.stats.highestExit"
+        >Highest Exit</span
+      >
+      <span class="value" id="stat-highestAlt">—</span>
+    </div>
+  </section>
+
+  <section class="lb-recent">
+    <h2 id="recent" data-i18n="logbook.overview.recentJumps">Recent Jumps</h2>
+    <div id="recent-cards" class="entries-wrapper entries-compact"></div>
+  </section>
+
+  <section class="lb-two">
+    <section class="lb-aircraft">
+      <h2 data-i18n="logbook.overview.aircraftUsage">Aircraft Usage</h2>
+
+      <div class="chart-wrapper">
+        <canvas
+          id="aircraftChart"
+          role="img"
+          aria-label="Aircraft usage chart"
+        ></canvas>
+        <div class="visually-hidden" data-i18n="logbook.overview.chartSrNote">
+          Bar chart showing jumps by aircraft type.
+        </div>
+      </div>
+      <ul id="aircraft-list"></ul>
+    </section>
+
+    <section class="lb-equipment">
+      <h2 id="equipment" data-i18n="logbook.overview.equipment">Equipment</h2>
+      <ul class="kv">
+        <li>
+          <span data-i18n="logbook.equipment.container">Container</span>
+          <strong id="eq-container">—</strong>
+        </li>
+        <li>
+          <span data-i18n="logbook.equipment.main">Main canopy</span>
+          <strong id="eq-main">—</strong>
+        </li>
+        <li>
+          <span data-i18n="logbook.equipment.reserve">Reserve</span>
+          <strong id="eq-reserve">—</strong>
+        </li>
+        <li>
+          <span data-i18n="logbook.equipment.aad">AAD</span>
+          <strong id="eq-aad">—</strong>
+        </li>
+        <li>
+          <span data-i18n="logbook.equipment.wingLoading">Wing loading</span>
+          <strong id="eq-wingLoading">—</strong>
+        </li>
+      </ul>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,320 @@
+.logbook-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.logbook-page .sidebar {
+  flex: 0 0 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  backdrop-filter: blur(6px);
+  box-sizing: border-box;
+}
+
+.logbook-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#logbook-form label {
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+  display: block;
+  color: #f0e68c;
+}
+
+#logbook-form input[type="text"],
+#logbook-form input[type="date"],
+#logbook-form input[type="number"],
+#logbook-form textarea {
+  width: 800px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+#logbook-form input[type="text"]:focus,
+#logbook-form input[type="date"]:focus,
+#logbook-form input[type="number"]:focus,
+#logbook-form textarea:focus {
+  outline: none;
+  border-color: #d7b520;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#logbook-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+#logbook-form button {
+  background-color: #d7b520;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: not-allowed;
+  opacity: 0.6;
+  align-self: flex-start;
+}
+
+#logbook-form p {
+  color: #e6e5e1;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+#logbook-form button:hover {
+  background-color: #b5a010;
+}
+
+.entries-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 4rem;
+}
+
+.entry-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.entry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.entry-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #f7e488;
+}
+
+.entry-meta {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.entry-meta span {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.entry-notes {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.logbook-page .logbook-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.logbook-page .card:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+}
+
+#logbook-overview .lb-head {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 1rem;
+}
+#logbook-overview h1 {
+  color: #f7e488;
+  margin-bottom: 1rem;
+}
+#logbook-overview h2 {
+  color: #f7e488;
+  margin: 2rem 0 1rem;
+}
+
+#logbook-overview .lb-stats {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+#logbook-overview .stat {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  gap: 0.25rem;
+  backdrop-filter: blur(2px);
+}
+#logbook-overview .stat .label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+#logbook-overview .stat .value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+#logbook-overview .lb-recent .entries-wrapper.entries-compact {
+  padding: 0;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#logbook-overview .lb-two {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+
+#logbook-overview .placeholder-chart {
+  height: 180px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+#logbook-overview #aircraft-list {
+  list-style: none;
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+#logbook-overview #aircraft-list li {
+  padding: 0.25rem 0;
+}
+
+#logbook-overview .kv {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#logbook-overview .kv li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+#logbook-overview .kv li:last-child {
+  border-bottom: 0;
+}
+
+#logbook-overview .info-text {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.75rem 0.9rem;
+  border-radius: 1rem;
+  margin-top: 0.75rem;
+}
+
+.logbook-page #logbook-content.is-wide,
+.logbook-page #logbook-content.is-wide .logbook-content {
+  max-width: 1400px !important;
+  width: 100% !important;
+}
+
+#logbook-overview [id] {
+  scroll-margin-top: 90px;
+}
+
+#logbook-overview h1 {
+  color: #f7e488;
+  margin-bottom: 0.25rem;
+}
+#logbook-overview .muted {
+  opacity: 0.85;
+}
+
+#logbook-overview h1 + p::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0.5rem 0 1rem;
+}
+
+#logbook-overview [id] {
+  scroll-margin-top: 90px;
+}
+
+/*Logbook oldal reszponzív beállítása*/
+
+@media (max-width: 768px) {
+  .logbook-page {
+    flex-direction: column;
+  }
+  .logbook-page .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: none;
+  }
+  .logbook-content {
+    max-width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .entries-wrapper {
+    padding: 1rem;
+  }
+
+  .entry-card {
+    padding: 1rem;
+  }
+
+  .entry-meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 900px) {
+  #logbook-overview .lb-two {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,46 @@
+<aside class="sidebar">
+  <!-- Bejelentkezett nézet -->
+  <div class="auth-only">
+    <h2 data-i18n="logbook.sidebar.title" style="margin-bottom: 1rem">
+      Logbook
+    </h2>
+    <ul>
+      <li>
+        <a href="#/logbook/overview" data-i18n="logbook.sidebar.overview"
+          >Overview</a
+        >
+      </li>
+      <li>
+        <a href="#/logbook/entries" data-i18n="logbook.sidebar.entries"
+          >Entries</a
+        >
+      </li>
+      <li>
+        <a href="#/logbook/add-entry" data-i18n="logbook.sidebar.newEntry"
+          >New Entry</a
+        >
+      </li>
+      <li>
+        <a href="#/logbook/stats" data-i18n="logbook.sidebar.stats"
+          >Statistic</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <!-- Vendég nézet -->
+  <div class="guest-only">
+    <h2 data-i18n="logbook.sidebar.title" style="margin-bottom: 1rem">Napló</h2>
+    <p class="info-text" data-i18n="logbook.guestHint">
+      Vendég nézet: bejelentkezés után éred el a napló funkciókat.
+    </p>
+    <p style="margin-top: 0.5rem">
+      <a
+        href="#/auth"
+        class="btn"
+        style="color: #ffcc00; text-decoration: underline"
+        >Bejelentkezés</a
+      >
+    </p>
+  </div>
+</aside>

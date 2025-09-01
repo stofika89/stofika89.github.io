@@ -1,0 +1,2118 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("../img/background/bg_3840x2560.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Reszponzivitás*/
+/*WQHD (max. 2560px szélesség)*/
+@media (max-width: 2560px) {
+  body {
+    background-image: url("../img/background/bg_2560x1706.png");
+  }
+}
+/*Full HD (max. 1920px szélesség)*/
+@media (max-width: 1920px) {
+  body {
+    background-image: url("../img/background/bg_1920x1280.png");
+  }
+}
+/*Tablet (769-1151px között)*/
+@media (max-width: 1151px) and (min-width: 769px) {
+  body {
+    background-image: url("../img/background/bg_1152x768.png");
+  }
+}
+/*Mobil nézet (max. 768px)*/
+@media (max-width: 768px) {
+  body {
+    background-image: url("../img/background/bg_768x512.png");
+  }
+  .hero {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  .hero .subtitle {
+    font-size: 1rem;
+    max-width: 90vw;
+    margin-top: 1rem;
+  }
+  .highlight-box {
+    width: 90vw;
+    max-width: 520px;
+    height: auto;
+    transform: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  .highlight-box h2 {
+    font-size: 2rem;
+  }
+  .highlight-box h3 {
+    font-size: 1.4rem;
+  }
+  .highlight-box p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10vh;
+  }
+  .card-column,
+  .card-row {
+    flex-direction: column !important;
+    width: 100%;
+    align-items: center;
+  }
+  .card,
+  .card-row .card,
+  .card-column .card {
+    width: 90vw !important;
+    max-width: 520px;
+    height: 140px !important;
+  }
+  .safety .card-icon,
+  .logbook .card-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 3rem;
+  }
+  .safety .card-title,
+  .logbook .card-title {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  /*Curtain menü mobil*/
+  .hamburger {
+    display: block;
+  }
+  .nav-main,
+  .navbar-controls .language-switcher,
+  .profile-icon {
+    display: none;
+  }
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: flex;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .language-switcher {
+    display: none !important;
+  }
+}
+/*Asztali nézet (min. 769px)*/
+@media (min-width: 769px) {
+  .nav-main {
+    display: flex !important;
+  }
+  .navbar-controls {
+    display: flex !important;
+    align-items: center;
+    gap: 1rem;
+  }
+  .language-switcher {
+    display: flex !important;
+  }
+  .language-mobile,
+  .hamburger,
+  .curtain-menu {
+    display: none !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+  .desktop-only {
+    display: block !important;
+  }
+}
+/* Mobilnézet ráerősítés, mert nem ment eddig rohadjon meg */
+@media (max-width: 768px) {
+  .hamburger,
+  .mobile-only {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+/*Safety oldal reszponzív beállítása*/
+@media (max-width: 1024px) {
+  .safety-page {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .safety-sidebar {
+    width: 100%;
+    position: static;
+  }
+  .safety-content {
+    padding: 1.5rem;
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(15, 15, 15, 0.6);
+  padding: 1rem 2rem;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.logo:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+.nav-main {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/*Navigáció Linkek*/
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/*Nyelvváltó*/
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  gap: 0.5rem;
+}
+
+.flag {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.flag:hover {
+  transform: scale(1.2) rotate(3deg);
+  filter: brightness(1.2);
+}
+
+/*Profil ikon*/
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+/*Curtain menü*/
+/* Hamburger ikon*/
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Curtain sötét háttér */
+.curtain-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Aktív menü */
+.curtain-menu.show {
+  display: flex;
+}
+
+/* Középreigazítás */
+.curtain-content {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Linkek stílusa */
+.curtain-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.curtain-links li {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.curtain-links a {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.curtain-links a:hover {
+  color: #ffcc00;
+}
+
+/* Bezárás gomb */
+.close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Nyelvváltó gombok curtain menüben */
+.curtain-language-switcher {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.curtain-language-switcher img:hover {
+  transform: scale(1.2);
+}
+
+/* === Landing page stílusa === */
+/*Központi tartalom*/
+main#app {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/*Home content wrapper*/
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Az oldal Címe és leírás*/
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: auto;
+  padding-top: 1vh;
+  padding-bottom: 5vh;
+}
+
+.welcome h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/*Tartalom kártyák landing pagen*/
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*Alap szövegbeállítás*/
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*Sárga highlight doboz*/
+/*Alapbeállítások*/
+.highlight-box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ff6f00;
+  padding: 2rem;
+  margin-top: -4vh;
+  z-index: 2;
+  border-radius: 2rem;
+  width: 95vw;
+  max-width: 1000px;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+/*Szövegbeállítások*/
+.highlight-box h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.highlight-box h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.highlight-box p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/*  Kártyák elhelyzkedése */
+.card-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.card-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* Alap kártyastílus */
+.card-title {
+  position: absolute;
+  z-index: 2;
+}
+
+.card-icon {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Bal oldali oszlop (kisebb kártyák) */
+.card-column .card {
+  width: 520px;
+  height: 140px;
+}
+
+/* Jobb oldali sor (magasabb kártyák) */
+.card-row .card {
+  width: 220px;
+  height: 300px;
+}
+
+/* Kártya cím */
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Kártya ikonok */
+.card img {
+  width: 100px;
+  height: auto;
+  margin-top: 1rem;
+  top: 30%;
+}
+
+/* Hover effekt kártyákra */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Egyedi háttérszínek a kártyákhoz */
+.dropzones {
+  background-color: #0a375d;
+}
+
+.quickrecipes {
+  background-color: #ffb300;
+}
+
+.safety {
+  background-color: #f25c05;
+}
+
+.logbook {
+  background-color: #146c75;
+}
+
+.dropzones .card-title {
+  top: 3rem;
+  left: 1rem;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dropzones .card-icon {
+  top: 0.5rem;
+  right: 3rem;
+}
+
+.quickrecipes .card-title {
+  top: 3rem;
+  left: 1rem;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.quickrecipes .card-icon {
+  top: 0.5rem;
+  right: 3rem;
+}
+
+.safety .card-title,
+.logbook .card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.safety .card-icon,
+.logbook .card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Footer stílus beállításai, és a hozzá tartozó oldalak === */
+.footer {
+  background-color: rgba(15, 15, 15, 0.6);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  color: #ccc;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-content a {
+  color: #ffcc00;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/*Social Media ikonok*/
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2) invert(0);
+}
+
+/* Terms of Service / Privacy Policy stílusok  */
+.terms-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.terms-wrapper h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.terms-wrapper h2 {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: #f7e488;
+}
+
+.terms-wrapper p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.terms-wrapper a {
+  color: #f7e488;
+  text-decoration: underline;
+}
+
+/* Contact form stílus */
+.contact-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.contact-wrapper h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.contact-wrapper p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.contact-form input[type=text]:focus,
+.contact-form input[type=email]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #d7b520;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #d7b520;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.contact-form .info-text {
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+}
+
+/*About page */
+.about-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.about-wrapper h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-wrapper p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.recipes-page {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  flex: 1;
+}
+
+.recipe-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+}
+
+.recipe-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.recipe-card p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.recipe-card {
+  display: block;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.03);
+  color: #ffcc00;
+}
+
+/* Receptkártyák */
+.recipes-page {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.recipe-content {
+  flex: 1;
+  color: white;
+  margin: 0.5rem;
+}
+
+.meta span {
+  margin-right: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.ingredients-steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+  gap: 2rem;
+}
+
+.ingredients ul {
+  list-style: disc;
+  margin-left: 1rem;
+}
+
+.recipe-image img {
+  width: 280px;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  margin: 1rem;
+}
+
+.recipe-image img:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 15px rgba(236, 217, 217, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instructions ol {
+  padding-left: 1.2rem;
+  margin: 0.5rem;
+}
+
+.favorite-btn {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  background-color: #ff6f00;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.favorite-btn:hover {
+  background-color: #e55a00;
+}
+
+.recipe-wrapper {
+  display: flex;
+  height: 700px;
+  width: 700px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+}
+
+/* Reszponzív stílusok */
+@media (max-width: 768px) {
+  .recipes-page {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .sidebar {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .recipes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .recipe-card {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .recipe-card img {
+    height: 180px;
+  }
+  .recipe-image img:hover {
+    transform: none !important;
+    box-shadow: 0 0 15px rgba(236, 217, 217, 0.25);
+  }
+  .meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .ingredients-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .recipe-image img {
+    width: 100%;
+    height: auto;
+  }
+  .favorite-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  .recipe-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+.dropzones-page {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.dropzones-sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.dropzones-sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.dropzones-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropzones-sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.dropzones-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropzones-sidebar ul li a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.dropzones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.dropzones-container a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.dropzones-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dropzones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  flex: 1;
+}
+
+.dropzones-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.dropzones-card:hover {
+  transform: scale(1.03);
+}
+
+.dropzones-card img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.dropzones-card h3 {
+  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.dropzones-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ==== Részletes dropzone oldal stílus ==== */
+.dropzone-page {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.dropzone-sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+
+.dropzone-sidebar h2 {
+  margin-bottom: 1rem;
+}
+
+.dropzone-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropzone-sidebar ul li {
+  margin-bottom: 1rem;
+}
+
+.dropzone-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropzone-sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+.dropzone-content {
+  flex: 1;
+  color: white;
+  margin: 0.5rem;
+}
+
+.dropzone-meta span {
+  margin-right: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.dropzone-steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 0.5rem 0;
+  gap: 1rem;
+}
+
+.dropzone-needs ul {
+  list-style: disc;
+  margin-left: 1rem;
+}
+
+.dropzone-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  margin: 1rem;
+}
+
+.dropzone-image img:hover {
+  transform: scale(1);
+  box-shadow: 0 0 15px rgba(236, 217, 217, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dropzone-desc {
+  margin-top: -3rem;
+}
+
+.dropzone-desc ol {
+  padding-left: 1.2rem;
+  margin: 0.5rem;
+}
+
+.dropzone-favorite-btn {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  background-color: #ff6f00;
+  color: white;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dropzone-favorite-btn:hover {
+  background-color: #e55a00;
+}
+
+.dropzone-wrapper {
+  flex: 1;
+  max-width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.dropzone-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.dropzone-meta i {
+  color: #ffcc00;
+}
+
+/* Reszponzív stílusok */
+@media (max-width: 768px) {
+  .dropzones-page {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .dropzones-sidebar {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .dropzones-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .dropzones-card {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+  .dropzones-card img {
+    height: 180px;
+  }
+  .dropzones-image img:hover {
+    transform: none !important;
+    box-shadow: 0 0 15px rgba(236, 217, 217, 0.25);
+  }
+  .meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .dropzones-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .dropzones-image img {
+    width: 100%;
+    height: auto;
+  }
+  .favorite-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+  .dropzones-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+/*  Popup stílus  */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Popup stílus vége*/
+/* === Safety oldal stílusa === */
+.safety-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+/* Oldalsó navigáció */
+.safety-sidebar {
+  width: 260px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  position: sticky;
+  top: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.safety-sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #f7e488;
+}
+
+.safety-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.safety-sidebar li {
+  margin-bottom: 0.8rem;
+}
+
+.safety-sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.safety-sidebar a:hover {
+  color: #ffcc00;
+}
+
+/* Tartalmi rész */
+.safety-content {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.safety-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f7e488;
+}
+
+.safety-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #f7e488;
+}
+
+.safety-content h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  color: #ed3b32;
+}
+
+.safety-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.safety-content li {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.safety-content p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.safety-content hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
+/* Blog oldal stílusa*/
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.blog-container img {
+  width: 100%;
+  max-width: 400px;
+  margin-right: 2rem;
+}
+
+.blog-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.blog-card h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* === Sidebar stílusok === */
+.sidebar,
+.dropzones-sidebar,
+.logbook-page .sidebar,
+.safety-sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+.sidebar h2,
+.dropzones-sidebar h2,
+.logbook-page .sidebar h2,
+.safety-sidebar h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+.safety-sidebar .sidebar h2,
+.safety-sidebar .dropzones-sidebar h2,
+.safety-sidebar .logbook-page .sidebar h2,
+.safety-sidebar .safety-sidebar h2 {
+  color: #f7e488;
+}
+.sidebar ul,
+.dropzones-sidebar ul,
+.logbook-page .sidebar ul,
+.safety-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li,
+.dropzones-sidebar ul li,
+.logbook-page .sidebar ul li,
+.safety-sidebar ul li {
+  margin-bottom: 1rem;
+}
+.sidebar ul li a,
+.dropzones-sidebar ul li a,
+.logbook-page .sidebar ul li a,
+.safety-sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.sidebar ul li a:hover,
+.dropzones-sidebar ul li a:hover,
+.logbook-page .sidebar ul li a:hover,
+.safety-sidebar ul li a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+.sidebar.safety-sidebar,
+.dropzones-sidebar.safety-sidebar,
+.logbook-page .sidebar.safety-sidebar,
+.safety-sidebar.safety-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1.5rem;
+  position: sticky;
+  top: 2rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+/* === Login oldalak stílusai === */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.auth-container img {
+  width: 100%;
+  max-width: 400px;
+  margin-right: 2rem;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-card h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #ff6f00;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-card button:hover {
+  background-color: #1a2e66;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* === Login oldalak stílusainak a vége === */
+.logbook-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.logbook-page .sidebar {
+  flex: 0 0 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  box-sizing: border-box;
+}
+
+.logbook-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#logbook-form label {
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+  display: block;
+  color: #f0e68c;
+}
+
+#logbook-form input[type=text],
+#logbook-form input[type=date],
+#logbook-form input[type=number],
+#logbook-form textarea {
+  width: 800px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+#logbook-form input[type=text]:focus,
+#logbook-form input[type=date]:focus,
+#logbook-form input[type=number]:focus,
+#logbook-form textarea:focus {
+  outline: none;
+  border-color: #d7b520;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#logbook-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+#logbook-form button {
+  background-color: #d7b520;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: not-allowed;
+  opacity: 0.6;
+  align-self: flex-start;
+}
+
+#logbook-form p {
+  color: #e6e5e1;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+#logbook-form button:hover {
+  background-color: #b5a010;
+}
+
+.entries-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 4rem;
+}
+
+.entry-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.entry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.entry-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #f7e488;
+}
+
+.entry-meta {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.entry-meta span {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.entry-notes {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.logbook-page .logbook-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.logbook-page .card:hover {
+  transform: none !important;
+  box-shadow: inherit !important;
+}
+
+#logbook-overview .lb-head {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 1rem;
+}
+
+#logbook-overview h1 {
+  color: #f7e488;
+  margin-bottom: 1rem;
+}
+
+#logbook-overview h2 {
+  color: #f7e488;
+  margin: 2rem 0 1rem;
+}
+
+#logbook-overview .lb-stats {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+#logbook-overview .stat {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  gap: 0.25rem;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+#logbook-overview .stat .label {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+#logbook-overview .stat .value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+#logbook-overview .lb-recent .entries-wrapper.entries-compact {
+  padding: 0;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+#logbook-overview .lb-two {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+}
+
+#logbook-overview .placeholder-chart {
+  height: 180px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+#logbook-overview #aircraft-list {
+  list-style: none;
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+
+#logbook-overview #aircraft-list li {
+  padding: 0.25rem 0;
+}
+
+#logbook-overview .kv {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#logbook-overview .kv li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#logbook-overview .kv li:last-child {
+  border-bottom: 0;
+}
+
+#logbook-overview .info-text {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.75rem 0.9rem;
+  border-radius: 1rem;
+  margin-top: 0.75rem;
+}
+
+.logbook-page #logbook-content.is-wide,
+.logbook-page #logbook-content.is-wide .logbook-content {
+  max-width: 1400px !important;
+  width: 100% !important;
+}
+
+#logbook-overview [id] {
+  scroll-margin-top: 90px;
+}
+
+#logbook-overview h1 {
+  color: #f7e488;
+  margin-bottom: 0.25rem;
+}
+
+#logbook-overview .muted {
+  opacity: 0.85;
+}
+
+#logbook-overview h1 + p::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0.5rem 0 1rem;
+}
+
+#logbook-overview [id] {
+  scroll-margin-top: 90px;
+}
+
+/*Logbook oldal reszponzív beállítása*/
+@media (max-width: 768px) {
+  .logbook-page {
+    flex-direction: column;
+  }
+  .logbook-page .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: none;
+  }
+  .logbook-content {
+    max-width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .entries-wrapper {
+    padding: 1rem;
+  }
+  .entry-card {
+    padding: 1rem;
+  }
+  .entry-meta span {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 900px) {
+  #logbook-overview .lb-two {
+    grid-template-columns: 1fr;
+  }
+}
+/* === PROFILE WRAPPER === */
+.profile-wrapper {
+  display: flex;
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  height: auto;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding-top: 100px;
+  overflow: visible;
+  flex-wrap: wrap; /* hozzáadva a mobilos töréshez */
+}
+
+/* === PROFILE AVATAR === */
+.profile-avatar {
+  position: absolute;
+  top: -30px;
+  left: 55%;
+  transform: translateX(-55%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* === MENU (SIDEBAR) === */
+.profile-menu {
+  margin-top: -5rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+  width: 220px;
+}
+
+.profile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-menu li {
+  position: relative;
+}
+
+.profile-menu a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s;
+}
+
+.profile-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffcc00;
+}
+
+.profile-menu .submenu {
+  width: 180px;
+  display: none;
+  position: relative;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.profile-menu li:hover > .submenu {
+  display: block;
+}
+
+/* === MAIN CONTENT === */
+.profile-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -1.5rem;
+  max-width: 600px;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.profile-content h2 {
+  color: #ffcc00;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .profile-wrapper {
+    flex-direction: row;
+    padding: 6rem 1rem 2rem;
+  }
+  .profile-menu {
+    margin-top: 0;
+    margin-left: 0;
+    width: 200px;
+  }
+  .profile-content {
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .profile-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-menu {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .profile-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .profile-menu li {
+    margin: 0 0.5rem;
+  }
+  .profile-menu .submenu {
+    position: static;
+    margin: 0.5rem 0 0 0;
+    width: auto;
+  }
+  .profile-content {
+    max-width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    top: 60px;
+  }
+  .profile-content h2 {
+    font-size: 1.5rem;
+  }
+  .profile-content p {
+    font-size: 0.95rem;
+  }
+  .profile-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 769px) {
+  .profile-content {
+    margin-top: -1.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */

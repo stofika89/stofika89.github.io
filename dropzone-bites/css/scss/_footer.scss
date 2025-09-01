@@ -1,0 +1,175 @@
+/* === Footer stílus beállításai, és a hozzá tartozó oldalak === */
+.footer {
+  background-color: rgba(15, 15, 15, 0.6);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+  color: #ccc;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.footer-content a {
+  color: #ffcc00;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/*Social Media ikonok*/
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
+}
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2) invert(0);
+}
+/* Terms of Service / Privacy Policy stílusok  */
+.terms-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.terms-wrapper h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.terms-wrapper h2 {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: #f7e488;
+}
+
+.terms-wrapper p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.terms-wrapper a {
+  color: #f7e488;
+  text-decoration: underline;
+}
+
+/* Contact form stílus */
+
+.contact-wrapper {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.contact-wrapper h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.contact-wrapper p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #d7b520;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #d7b520;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.contact-form .info-text {
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: center;
+}
+
+/*About page */
+
+.about-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.about-wrapper h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-wrapper p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}

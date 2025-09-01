@@ -1,0 +1,97 @@
+/* === Safety oldal stílusa === */
+
+.safety-page {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+/* Oldalsó navigáció */
+.safety-sidebar {
+  width: 260px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.safety-sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #f7e488;
+}
+
+.safety-sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.safety-sidebar li {
+  margin-bottom: 0.8rem;
+}
+
+.safety-sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.safety-sidebar a:hover {
+  color: #ffcc00;
+}
+
+/* Tartalmi rész */
+.safety-content {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.safety-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f7e488;
+}
+
+.safety-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #f7e488;
+}
+
+.safety-content h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  color: #ed3b32;
+}
+
+.safety-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.safety-content li {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.safety-content p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.safety-content hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}

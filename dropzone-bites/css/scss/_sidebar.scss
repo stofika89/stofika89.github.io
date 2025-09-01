@@ -1,0 +1,53 @@
+/* === Sidebar stílusok === */
+
+.sidebar,
+.dropzones-sidebar,
+.logbook-page .sidebar,
+.safety-sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  backdrop-filter: blur(6px);
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+
+    // Safety sidebar kivétel
+    .safety-sidebar & {
+      color: #f7e488;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+
+        &:hover {
+          text-decoration: underline;
+          color: #ffcc00;
+        }
+      }
+    }
+  }
+
+  // Safety oldalon más háttér és sticky beállítás
+  &.safety-sidebar {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1.5rem;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+  }
+}
